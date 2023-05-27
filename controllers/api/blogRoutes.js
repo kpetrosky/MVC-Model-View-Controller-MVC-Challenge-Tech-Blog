@@ -20,6 +20,23 @@ router.post('/', withAuth, async (req, res) => {
 // Get all blog entries for the logged-in user
 router.get('/:id', withAuth, async (req, res) => {
     try {
+        console.log(blog_see_this);
+        const blogEntries = await Blog.findByPk({
+            where: {
+                user_id: req.session.user_id,
+            },
+        });
+        console.log(blogEntries);
+        res.status(200).json(blogEntries);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+// Get all blog entries for the logged-in user
+router.get('/:id', withAuth, async (req, res) => {
+    try {
+        console.log(blog_see_this);
         const blogEntries = await Blog.findAll({
             where: {
                 user_id: req.session.user_id,
