@@ -43,7 +43,6 @@ router.get('/blog/:id', async (req, res) => {
                 }
             ],
         });
-        console.log('logging blog data');
         console.log(blogData);
         const blog = blogData.get({ plain: true });
 
@@ -67,7 +66,7 @@ router.get('/profile', withAuth, async (req, res) => {
             attributes: { exclude: ['password'] },
             include: [{ model: Blog }],
         });
-        console.log('blog3');
+  
         const user = userData.get({ plain: true });
 
         console.log('user:', user); // Add a console log to check the value of user
@@ -83,7 +82,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    console.log('blog4_I have logged in');
+    console.log('blog_I have logged in');
     if (req.session.logged_in) {
         res.redirect('/profile');
         return;

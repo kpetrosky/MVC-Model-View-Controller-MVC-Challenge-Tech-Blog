@@ -36,7 +36,6 @@ router.get('/:id', withAuth, async (req, res) => {
 // Get all blog entries for the logged-in user
 router.get('/:id', withAuth, async (req, res) => {
     try {
-        console.log(blog_see_this);
         const blogEntries = await Blog.findAll({
             where: {
                 user_id: req.session.user_id,
