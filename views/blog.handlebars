@@ -1,0 +1,25 @@
+{{#if loggedIn}}
+<section class="blog_entries">
+    {{#each blogEntries}}
+    console.log(err);
+    <div class="blog_entry">
+        <h2>{{title}}</h2>
+        <p>{{content}}</p>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <form class="form new-project-form">
+                <div class="form-group">
+                    <label for="blog_name">Blog Entries</label>
+                    <input class="form-input" type="text" id="blog-entry" name="blog_entry" />
+                </div>
+            </form>
+        </div>
+    </div>
+    {{/each}}
+</section>
+{{else}}
+<a href="/login">You must login first to view this page</a>
+{{/if}}
+<script src="../controllers/api"></script>
