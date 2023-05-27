@@ -12,6 +12,10 @@
 //npx sequelize-cli migration:generate --name add_name_to_users
 //npm i startbootstrap-clean-blog
 //npm i --save-dev nodemon
+//npm install express-handlebars
+//npm install express-session
+//npm i bcrypt
+//npm i sequelize
 
 
 
@@ -21,13 +25,15 @@ const express = require('express');
 const exphbs = require("express-handlebars");
 const session = require("express-session");
 
+
+
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ });
 
