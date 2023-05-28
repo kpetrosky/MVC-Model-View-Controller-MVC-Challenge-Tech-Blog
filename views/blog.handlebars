@@ -1,10 +1,9 @@
 {{#if loggedIn}}
 <section class="blog_entries">
-    {{#each blogEntries}}
-    console.log(err);
+    {{!-- console.log(err); --}}
     <div class="blog_entry">
-        <h2>{{title}}</h2>
-        <p>{{content}}</p>
+        <h2>{{description}}</h2>
+        <p>{{blog_entry}}</p>
     </div>
 
     <div class="row mt-4">
@@ -17,9 +16,8 @@
             </form>
         </div>
     </div>
-    {{/each}}
 </section>
 {{else}}
 <a href="/login">You must login first to view this page</a>
 {{/if}}
-<script src="../controllers/api"></script>
+<script src="/public/js/"> </script>

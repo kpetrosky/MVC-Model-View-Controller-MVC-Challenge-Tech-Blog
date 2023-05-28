@@ -18,26 +18,29 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Get all blog entries for the logged-in user
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
-        console.log(blog_see_this);
-        const blogEntry = await Blog.findByPk(req.params.id, {
-            // JOIN with users table
-            include: [{ model: User, as: 'blogEntries' }]
+        // Retrieve blog entries for the logged-in user
+        const blogEntries = await Blog.findAll({
+            where: {
+                user_id: req.session.user_id,
+            },
+            include: [{ model: User, as: 'blogEntries' }], // JOIN with users table
         });
-        
-        if (!blogEntry) {
-            res.status(404).json({ message: 'No blog entry found with this id!' });
+
+        if (blogEntries.length === 0) {
+            res.status(404).json({ message: 'No blog entries found for this user!' });
             return;
         }
 
-        console.log(blogEntry);
-        res.status(200).json(blogEntry);
+        console.log(blogEntries);
+        res.status(200).json(blogEntries);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 });
+
 
 
 // Get all blog entries for the logged-in user
