@@ -27,32 +27,33 @@
     <script id="spaceCraft" type="text/x-handlebars-template">
 	<p>{{spacecraftName}} landed the first human on the Moon.</p>
 </script> --}}
-{{#each blogs as |blog| }}
+
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{{get_emoji}}}
-      <a href="/blog/{{blog.id}}">{{blog.description}}</a>
+      <a href="/blog/{{id}}">{{description}}</a>
     </h2>
     <p>
       {{!-- <span for="img" aria-label="money">💲</span> --}}
       <!-- Pass needed_funding value to the helper function -->
       {{!-- <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
       needed! --}}
+      {{description}}
     </p>
-    <p>Created by {{user.name}} on {{blog.description}}</p>
+    <p>Created by {{user.username}} on {{date_created}}</p>
   </div>
   <div class="col-md-7">
     <p>
-      {{blog.description}}
+      {{blog_entry}}
     </p>
   </div>
 </div>
-{{/each}}
+
 
 </section>
 {{else}}
 <a href="/login">You must log in first to view this page</a>
 {{/if}}
-<script src="/public/js/profile.js"></script>
+<script src="/js/profile.js"></script>
