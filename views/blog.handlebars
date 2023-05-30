@@ -1,23 +1,58 @@
 {{#if loggedIn}}
 <section class="blog_entries">
-    {{!-- console.log(err); --}}
+    {{!-- Iterate over blog entries and display them --}}
+    {{!-- {{#each blogEntries}}
     <div class="blog_entry">
         <h2>{{description}}</h2>
         <p>{{blog_entry}}</p>
     </div>
+    {{/each}}
 
     <div class="row mt-4">
         <div class="col-md-6">
             <form class="form new-project-form">
                 <div class="form-group">
-                    <label for="blog_name">Blog Entries</label>
+                    <label for="blog-entry">Blog Entry</label>
                     <input class="form-input" type="text" id="blog-entry" name="blog_entry" />
                 </div>
             </form>
         </div>
     </div>
+
+    {{#blockName}}
+    Block text content
+    <p>An HTML paragraph element</p>
+    {{/blockName}}
+
+    <script id="spaceCraft" type="text/x-handlebars-template">
+	<p>{{spacecraftName}} landed the first human on the Moon.</p>
+</script> --}}
+{{#each blogs as |blog| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/blog/{{blog.id}}">{{blog.description}}</a>
+    </h2>
+    <p>
+      {{!-- <span for="img" aria-label="money">💲</span> --}}
+      <!-- Pass needed_funding value to the helper function -->
+      {{!-- <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
+      needed! --}}
+    </p>
+    <p>Created by {{user.name}} on {{blog description}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{blog.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
+
 </section>
 {{else}}
-<a href="/login">You must login first to view this page</a>
+<a href="/login">You must log in first to view this page</a>
 {{/if}}
-<script src="/public/js/"> </script>
+<script src="/public/js/profile.js"></script>

@@ -26,15 +26,14 @@
     </form>
   </div>
 
-  {{#if blogs.length}}
+ {{#if blogs.length}}
   <div class="col-md-6 blog-list">
     <h3>Current blogs:</h3>
-
     {{#each blogs as |blog|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/blog/{{blog.id}}"></a></h4>
-        //trying to find a page that isn't what we want to find
+        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+        <!-- Displaying the title of the blog within the anchor tag -->
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
@@ -42,8 +41,9 @@
     </div>
     {{/each}}
   </div>
-  {{/if}}
+{{/if}}
 </div>
+
 
 <script src="/js/profile.js"></script>
 

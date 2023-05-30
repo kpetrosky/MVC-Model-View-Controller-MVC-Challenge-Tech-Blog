@@ -34,10 +34,10 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (name && email && password) {
+  if (email && password) {
     const response = await fetch('/api', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -48,6 +48,28 @@ const signupFormHandler = async (event) => {
     }
   }
 };
+
+// Assume that the server sets a cookie named "isLoggedIn" with the value "true" when the user is logged in
+
+// Read the value of the "isLoggedIn" cookie
+const isLoggedInCookie = document.cookie
+  .split(';')
+  .map(cookie => cookie.trim())
+  .find(cookie => cookie.startsWith('isLoggedIn='));
+
+// Check if the "isLoggedIn" cookie exists and its value is "true"
+const isUserLoggedIn = isLoggedInCookie && isLoggedInCookie.split('=')[1] === 'true';
+
+if (isUserLoggedIn) {
+  // Display user data 
+  document.getElementById('user-data').innerHTML = 'Welcome, User!';
+} else {
+  // Display a login/signup form or redirect to the login page
+  document.getElementById('login-form');
+
+}
+
+
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 

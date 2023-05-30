@@ -1,21 +1,24 @@
-  
-</head>
-<body class="{{template}}">
-  <header>
-    <div class='date'>
-      {{todaysDate}}
-    </div>
-  </header>
-  <div class="container">
-    {{{body}}}
+<!-- Loop over each object in the projects array -->
+{{#each blogs as |blog| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/blog/{{blog.id}}">{{blog.description}}</a>
+    </h2>
+    <p>
+      {{!-- <span for="img" aria-label="money">💲</span> --}}
+      <!-- Pass needed_funding value to the helper function -->
+      {{!-- <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
+      needed! --}}
+    </p>
+    <p>Created by {{user.name}} on {{blog description}}</p>
   </div>
-  <main>
-    <h1>Welcome to My Blog</h1>
-    <div class="posts">
-      {{!-- Render blog posts dynamically --}}
-    </div>
-  </main>
-  <footer>
-  </footer>
-</body>
-</html>
+  <div class="col-md-7">
+    <p>
+      {{blog.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
