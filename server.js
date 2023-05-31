@@ -25,16 +25,7 @@ const express = require('express');
 const exphbs = require("express-handlebars");
 const session = require("express-session");
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PW,
-  {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: 3306,
-  },
-);
+
 
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
