@@ -5,7 +5,7 @@ User.hasMany(Blog,{
 foreignKey: 'user_id',
 onDelete: 'CASCADE'
 });
-
+//blog belongs to users, one too many relationships
 Blog.belongsTo(User, {
     foreignKey: 'user_id'
 });
