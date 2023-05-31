@@ -1,12 +1,18 @@
 [
   {
-    "description": "went hiking",
-    "blog_entry": "Before the jump, random things happened",
+    "description": "Why MVC is so important!",
+    "blog_entry": "Mvc allows the developer the ability to create several view components(handlebars) getting rid of duplicate code.",
     "user_id": 1
   },
   {
-    "description": "played poker",
-    "blog_entry": "Won lots of nickels",
+    "description": "Object-Relational Mapping",
+    "blog_entry": "ORM made SQL so much easier to navigate or manage!",
+    "user_id": 2
+  },
+  {
+    "description": "Authentication vs Authorization",
+    "blog_entry": "Authentication is making sure the system know you and you are you. Authorization allows you into the system",
     "user_id": 2
   }
+
 ]
