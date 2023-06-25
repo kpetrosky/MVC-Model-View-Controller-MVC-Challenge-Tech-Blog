@@ -30,7 +30,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 //npm init -y
 //npm i express
 //mysql -u root -p
-//SOURCE schema.sql;
+// source db/schema.sql;
 //SOURCE insert-schema.sql;
 //SHOW databases;
 //SHOW tables;
