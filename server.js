@@ -1,5 +1,12 @@
 const express = require('express');
 const mysql = require('mysql');
+const expressHandlebars = require('express-handlebars');
+const session = require('express-session');
+const dotenv = require('dotenv');
+const mysql2 = require('mysql2');
+const { Sequelize } = require('sequelize');
+const bcrypt = require('bcrypt');
+const inquirer = require('inquirer');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -7,14 +14,6 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static('../client/dist'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-const pool = mysql.createPool({
-  connectionLimit: 10,
-  host: 'your-jawsdb-hostname',
-  port: 'your-jawsdb-port',
-  user: 'your-jawsdb-username',
-  password: 'your-jawsdb-password',
-  database: 'your-jawsdb-database-name'
-});
 
 app.get('/your-route', (req, res) => {
   // Use the connection pool for executing queries
