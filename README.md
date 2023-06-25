@@ -30,7 +30,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 //npm init -y
 //npm i express
 //mysql -u root -p
-//SOURCE schema.sql;
+// source db/schema.sql;
 //SOURCE insert-schema.sql;
 //SHOW databases;
 //SHOW tables;
@@ -52,35 +52,14 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```md
     ![alt text](assets/images/screenshot.png)
     ```
-    
-    ![Screenshot 2023-05-31 165829](https://github.com/kpetrosky/MVC-Model-View-Controller-MVC-Challenge-Tech-Blog/assets/122655154/37d838f6-9847-4fb5-83b0-d529cce69fcb)
-    ![Screenshot 2023-05-31 165715](https://github.com/kpetrosky/MVC-Model-View-Controller-MVC-Challenge-Tech-Blog/assets/122655154/2efdb066-6863-4cc6-8c75-32eb667d0fc1)
-![Screenshot 2023-05-31 165732](https://github.com/kpetrosky/MVC-Model-View-Controller-MVC-Challenge-Tech-Blog/assets/122655154/d52cabb3-e121-4c7b-824d-ac0ae3559b2f)
-![Screenshot 2023-05-31 165745](https://github.com/kpetrosky/MVC-Model-View-Controller-MVC-Challenge-Tech-Blog/assets/122655154/95afeaed-e6a2-475c-bbad-f55834893e7a)
-![Screenshot 2023-05-31 165757](https://github.com/kpetrosky/MVC-Model-View-Controller-MVC-Challenge-Tech-Blog/assets/122655154/f29fcdb6-1b3a-49f2-87de-d73eacb4229c)
-![Screenshot 2023-05-31 165817](https://github.com/kpetrosky/MVC-Model-View-Controller-MVC-Challenge-Tech-Blog/assets/122655154/19ec62db-1ae1-4b22-98e7-cc847f513a3d)
-![Screenshot 2023-05-31 165829](https://github.com/kpetrosky/MVC-Model-View-Controller-MVC-Challenge-Tech-Blog/assets/122655154/f43c2d11-f650-472d-997b-f1fe317c96bf)
-
-
-
-
-
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
 
 ## License
 
 The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+
 MIT license
----
 
 ## Links
 https://frozen-lake-62666.herokuapp.com/
 
 https://github.com/kpetrosky/MVC-Model-View-Controller-MVC-Challenge-Tech-Blog
-
