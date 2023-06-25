@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.static('../client/dist'));
 app.use(express.urlencoded({ extended: true }));
@@ -15,7 +15,6 @@ const pool = mysql.createPool({
   password: 'your-jawsdb-password',
   database: 'your-jawsdb-database-name'
 });
-require('./routes/htmlRoutes')(app);
 
 app.get('/your-route', (req, res) => {
   // Use the connection pool for executing queries
@@ -28,15 +27,6 @@ app.get('/your-route', (req, res) => {
     console.log('Query results:', results);
     res.json(results);
   });
-});
-
-pool.getConnection((err, connection) => {
-  if (err) {
-    console.error('Error connecting to JawsDB:', err);
-    return;
-  }
-  console.log('Connected to JawsDB MySQL database!');
-  connection.release();
 });
 
 app.listen(PORT, () => console.log(`Now listening on port: ${PORT}`));
